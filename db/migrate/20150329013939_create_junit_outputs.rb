@@ -1,9 +1,10 @@
 class CreateJunitOutputs < ActiveRecord::Migration
   def up
     create_table :junit_outputs do |t|
-      t.string :output, null: false
       t.timestamps null: false
     end
+    add_column :junit_outputs, :output, :binary, :limit =>100.kilobyte
+
     add_column :test_suites, :junit_output_id, :integer
     add_foreign_key :test_suites, :junit_outputs
     add_index :test_cases, :name

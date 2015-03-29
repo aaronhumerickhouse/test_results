@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20150329013939) do
     t.datetime "updated_at",                null: false
   end
 
-  add_index "properties", ["test_suite_id"], name: "fk_rails_5dd35fb490", using: :btree
+  add_index "properties", ["test_suite_id"], name: "fk_rails_c0219d03f3", using: :btree
 
   create_table "test_cases", force: :cascade do |t|
     t.integer  "test_suite_id", limit: 4,   null: false
@@ -51,10 +51,10 @@ ActiveRecord::Schema.define(version: 20150329013939) do
   end
 
   add_index "test_cases", ["classname"], name: "index_test_cases_on_classname", using: :btree
-  add_index "test_cases", ["message_id"], name: "fk_rails_b96c00dd33", using: :btree
+  add_index "test_cases", ["message_id"], name: "fk_rails_b0a4779bdf", using: :btree
   add_index "test_cases", ["name"], name: "index_test_cases_on_name", using: :btree
   add_index "test_cases", ["status"], name: "index_test_cases_on_status", using: :btree
-  add_index "test_cases", ["test_suite_id"], name: "fk_rails_feda2fdda2", using: :btree
+  add_index "test_cases", ["test_suite_id"], name: "fk_rails_8e2ae484ea", using: :btree
 
   create_table "test_suites", force: :cascade do |t|
     t.string   "name",            limit: 255, null: false
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20150329013939) do
     t.integer  "junit_output_id", limit: 4
   end
 
-  add_index "test_suites", ["junit_output_id"], name: "fk_rails_6d6fc74d99", using: :btree
+  add_index "test_suites", ["junit_output_id"], name: "fk_rails_bae73fabcd", using: :btree
   add_index "test_suites", ["name"], name: "index_test_suites_on_name", using: :btree
 
   add_foreign_key "properties", "test_suites"

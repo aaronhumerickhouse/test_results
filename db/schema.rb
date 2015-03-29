@@ -14,9 +14,9 @@
 ActiveRecord::Schema.define(version: 20150329013939) do
 
   create_table "junit_outputs", force: :cascade do |t|
-    t.string   "output",     limit: 255, null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.binary   "output",     limit: 16777215
   end
 
   create_table "messages", force: :cascade do |t|
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20150329013939) do
     t.integer  "junit_output_id", limit: 4
   end
 
-  add_index "test_suites", ["junit_output_id"], name: "fk_rails_bae73fabcd", using: :btree
+  add_index "test_suites", ["junit_output_id"], name: "fk_rails_abe8550657", using: :btree
   add_index "test_suites", ["name"], name: "index_test_suites_on_name", using: :btree
 
   add_foreign_key "properties", "test_suites"

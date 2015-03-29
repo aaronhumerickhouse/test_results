@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: test_results
-  password: <%= ENV['TEST_RESULTS_DATABASE_PASSWORD'] %>
+  password: test_results #<%= ENV['TEST_RESULTS_DATABASE_PASSWORD'] %>
   socket: /tmp/mysql.sock
 
 development:
